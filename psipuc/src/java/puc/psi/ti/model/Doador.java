@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package puc.si.psi.ti.model;
+package puc.psi.ti.model;
 
-import puc.si.psi.ti.model.Doacao;
+import puc.psi.ti.model.Doacao;
 
 import java.util.List;
 

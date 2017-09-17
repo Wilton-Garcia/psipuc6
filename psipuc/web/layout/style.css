@@ -7,12 +7,8 @@ and open the template in the editor.
     Created on : 11/09/2017, 10:33:13
     Author     : Wilton Garcia
 */
-.caixaDeTexto{
-    background-color:azure;
+.fundo{
+    background-color:red;
     text-align: justify;
-    margin-left:200px;
-    width:600px;
-    height:480px;
-    
 }
 

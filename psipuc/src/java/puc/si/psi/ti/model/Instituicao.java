@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package puc.psi.ti.model;
+package puc.si.psi.ti.model;
 
 import java.util.List;
 

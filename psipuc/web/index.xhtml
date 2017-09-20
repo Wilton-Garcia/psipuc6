@@ -5,20 +5,24 @@
       xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Sistema de doações</title>
-        <link rel="layout/style.css" type="text/css"/>
+        <link rel="StyleSheet" type="text/css" href="layout/style.css"/>
     </h:head>
-    <h:body class="fundo">
-        <h:panelGrid columns="2"
-                     class="fundo"
-                     >
-            <p:outputLabel value="Sistema de doações"/>
+    <h:body>
+        <div class="caixaDeTexto">
+
+            <p:outputLabel value="Sistema de doações" />
             <br />
-            <p:outputLabel value="Email"/>
-            <p:inputText id="Email"/>
-            <p:outputLabel value="Senha"/>
-            <p:inputText type="password"/>
-            <p:commandButton value="Fazer Login"/>
-        </h:panelGrid>
+
+            <h:panelGrid columns="2">
+                <p:outputLabel value="Email"/>
+                <p:inputText id="Email"/>
+                <p:outputLabel value="Senha"/>
+                <p:inputText type="password"/>
+                <p:commandButton value="Esqueci minha senha"/>
+                <p:commandButton value="Fazer Login"/>
+                <p:commandButton value="Criar conta"/>
+            </h:panelGrid>
+        </div>
     </h:body>
 </html>
 

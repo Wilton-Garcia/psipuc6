@@ -1,0 +1,91 @@
+body{
+    background: #FFFF;
+}
+#cabecalho{
+    background: url(doacoesimg.png);
+    height: 280px;
+    border:solid 1px;
+    border-radius:15px;
+   text-align: center;
+    text-shadow: 1px 1px 1px black;/*efeito de sombra*/
+    font-family: "Times New Roman";
+    font-size: 100px;   
+}
+
+#txtbusca{
+    float:left;
+  background-color:transparent;
+  padding-left:5px;
+  font-style:italic;
+  font-size:18px;
+    border:none;
+    width: 300px;
+    margin-top: 0%;
+}
+#btnbusca{
+    float:left;
+  background:url(buscar.png)no-repeat 0 0;
+    padding-left:5px;
+    font-style:italic;
+    font-size:18px;
+    border:none;
+    width: 30px;
+    background-position: right;
+    margin-top: 0%;
+}
+#btnbusca:hover{
+    background-color:darkgray;
+}
+#botoes{
+    
+    width:900px;
+    margin-top: 80px;
+    margin-left: 200px;
+}
+#btnCadastro{
+    background: url(group.png) no-repeat 0 0;
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    border: 5px solid white;
+
+}
+
+#btnVisualizar{
+    background: url(Monitora.png) no-repeat 0 0;
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    margin-left: 100px;
+    border: 5px solid white;
+  
+}
+
+#btnMensagem{
+     background: url(menssagem2.png) no-repeat 0 0;
+     height: 300px;
+     width: 300px;
+    background-position: center;
+    border: 5px solid white;
+}
+#btnPerfil{
+     background: url(user.png) no-repeat 0 0;
+     height: 300px;
+     width: 300px;
+    background-position: center;
+    margin-left: 100px;
+    border: 5px solid white;    
+}
+span{
+    opacity: 0;
+    color: white;
+    text-shadow: 1px 1px 1px black;/*efeito de sombra*/
+    background-color: rgba(0,0,0,0.2);
+    font-size: 10pt;
+    line-height: 100px;/*faz a legenda descer*/
+    padding: 5px;
+}
+
+button:hover span{
+    opacity: 1;
+}

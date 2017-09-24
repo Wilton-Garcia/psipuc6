@@ -11,6 +11,10 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>   
+        <?php
+            session_start();
+            $_SESSION['cont']=1;
+            header("Location:view/login.php")
+        ?>
     </body>
 </html>

@@ -4,6 +4,9 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php
+session_start();
+?>
 <html>
     <head>
         <title>Página Inicial</title>
@@ -13,9 +16,11 @@ and open the template in the editor.
     </head>
     <body> 
         <div id="cabecalho">
-            
-                <input type="text" id="txtbusca"placeholder="Busacar intituições ou pessoas"/>
+            <form name="fomr-busca" method="POST" action="../controller/BuscaController.php">
+                <input name="pesquisa"type="text" id="txtbusca"placeholder="Busacar intituições ou pessoas"/>
                 <input id="btnbusca" type="submit" value=" ">
+                
+            </form>
             <p id="titulo"> Sistema de Doações</p>
         </div>
             

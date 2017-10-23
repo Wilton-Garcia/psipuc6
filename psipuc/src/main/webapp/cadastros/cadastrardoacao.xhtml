@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Cadastro de Doações</title>
+        <h:form>
+            <p:outputLabel value="Você pode mundar uma vida com poucos cliques, faça uma doação!"/>
+            <p:panelGrid columns="2" >
+                <p:outputLabel value="O que deseja doar?"/>
+                <p:inputText value="#{doacaoBean.doacao.item}"/>
+                
+                <p:outputLabel value="Até quando esta doação vai estar disponível?"/>
+                <p:calendar value="#{doacaoBean.doacao.dataValidade}"/>
+                
+                <p:outputLabel value="Onde está doação se econtra?"/>
+                <p:inputText value="#{doacaoBean.doacao.endereco}"/>
+                
+                <p:outputLabel value="Nos conte um pouco mais sobre esta doação"/>
+                <p:inputTextarea rows="10"
+                                 value="#{doacaoBean.doacao.descricao}"/>
+            </p:panelGrid>
+            <p:commandButton value="Fazer doação" action="#{doacaoBean.cadastrarDoacao()}"/>
+        </h:form>
+    </h:head>
+    <h:body>
+    </h:body>
+</html>
+

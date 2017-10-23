@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Teste banco</title>
+    </h:head>
+    <h:body> 
+        <p:commandButton action="#{doacaoBean.recuperaListaPedidoDoacoes()}"
+                         value="Carregar Lista"/>
+        <p:dataTable value="#{doacaoBean.pedidosDoacaoes}" var="lista">
+            <p:column headerText="ID">
+                <h:outputLabel value="#{lista.id}"/>
+            </p:column>
+            <p:column headerText="Item">
+                <h:outputLabel value="#{lista.item}"/>
+            </p:column>
+        </p:dataTable> 
+    </h:body>
+</html>

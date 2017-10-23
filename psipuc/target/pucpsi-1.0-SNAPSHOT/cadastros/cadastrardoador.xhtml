@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Teste banco</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Digite o email"/>
+                <p:inputText value="#{doadorBean.doador.email}" size="50"/>
+                <p:outputLabel value="Digite a senha"  />
+                <p:password value="#{doadorBean.doador.senha}" size="25"/> 
+                <p:outputLabel value="Confirme a senha a senha"/>
+                <p:password value="#{doadorBean.udoadorsenha}" size="25"/>
+                <p:outputLabel value="Qual o seu nome completo?"/>
+                <p:inputText value="#{doadorBean.usudoadormeCompleto}" size="50"/>
+                <p:outputLabel value="Qual a sua data de nasciento?"/>
+                <p:calendar value="#{doadorBean.usudoadortaNascimento}"/>
+                <p:outputLabel value="Qual o seu estado?"/>
+                <p:selectOneMenu value="#{doadorBean.usdoadorndereco.estado}">
+                    <f:selectItem itemLabel="Acre" itemValue="AC" />
+                    <f:selectItem itemLabel="Alagoas" itemValue="AL" />
+                    <f:selectItem itemLabel="Amapá" itemValue="AP" />
+                    <f:selectItem itemLabel="Amazonas" itemValue="AM" />
+                    <f:selectItem itemLabel="Bahia" itemValue="BA" />
+                    <f:selectItem itemLabel="Ceara" itemValue="CE" />
+                    <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
+                    <f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
+                    <f:selectItem itemLabel="Goiás" itemValue="GO" />
+                    <f:selectItem itemLabel="Maranhão" itemValue="MA" />
+                    <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
+                    <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="CE" />
+                    <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
+                    <f:selectItem itemLabel="Pará" itemValue="PA" />
+                    <f:selectItem itemLabel="Paraíba" itemValue="PB" />
+                    <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                    <f:selectItem itemLabel="Pernambuco" itemValue="PE" />
+                    <f:selectItem itemLabel="Piauí" itemValue="PI" />
+                    <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
+                    <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
+                    <f:selectItem itemLabel="Rio Grande do  Sul" itemValue="RS" />
+                    <f:selectItem itemLabel="Rondônia" itemValue="RO" />
+                    <f:selectItem itemLabel="Roraima" itemValue="RR" />
+                    <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                    <f:selectItem itemLabel="São Paulo" itemValue="SP" />
+                    <f:selectItem itemLabel="Sergipe" itemValue="SE" />
+                    <f:selectItem itemLabel="Tocations" itemValue="TO"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="Em qual cidade?" />
+                <p:inputText value="#{doadorBean.usuaridoadoreco.cidade}" size="50"/>
+                <p:outputLabel value="E o bairro?" />
+                <p:inputText value="#{doadorBean.usuaridoadoreco.bairro}" size="50"/>
+                <p:outputLabel value="Nos diga também a rua"/>
+                <p:inputText value="#{doadorBean.usuaridoadoreco.logradouro}" size="50"/>
+                <p:outputLabel value="O número é importante também"/>
+                <p:inputText value="#{doadorBean.usuariodoadorco.numero}" size="15"/>
+                <p:outputLabel value="Existe algum complemento?"/>
+                <p:inputText value="#{doadorBean.doador.endereco.complemento}" size="25"/>
+            </p:panelGrid>
+            <p:commandButton value="Cadastrar" action="#{doadorBean.cadastrar()}"/>
+        </h:form>
+    </h:body>
+</html>
+

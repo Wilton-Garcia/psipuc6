@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Connection settings -->
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost/hibernate_tutorial_bd</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password"/>
+    <!-- SQL dialect -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    <!-- Print executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- Drop and re-create all database on startup -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+    <!-- Annotated entity classes -->
+    
+    <mapping class="puc.si.psi.ti.model.Doacao"/>
+    
+    <mapping class="puc.si.psi.ti.model.Doador"/>
+    <mapping class="puc.si.psi.ti.model.Endereco"/>
+  </session-factory>
+</hibernate-configuration>

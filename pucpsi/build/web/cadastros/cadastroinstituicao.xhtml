@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Test Index</title>
+    </h:head>
+    <h:body>
+        <p:outputLabel value="Para fazer parte do nosso sitema é bem simples, basta preenhcer alguns dados a baixo"/>
+        <h:form>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Email"/>
+                <p:inputText value="#{instituicaoMB.instituicao.email}"/>
+                <p:outputLabel value="Senha"/>
+                <p:password value="#{instituicaoMB.instituicao.senha}"/>
+                <p:outputLabel value="Nome Instituicao"/>
+                <p:inputText value="#{instituicaoMB.instituicao.nomeInstituicao}"/>
+                <p:outputLabel value="Data de Nascimento"/>
+                <p:calendar value="#{instituicaoMB.instituicao.dataCriacao}"/>
+                <p:outputLabel value="CNPJ"/>
+                <p:inputMask mask="99.999.999/0001-99" value="#{doadorMB.doador.cpf}"/>
+                <p:outputLabel value="Estado"/>
+                <p:selectOneMenu value="#{instituicaoMB.instituicao.endereco.estado}">
+                    <f:selectItem itemLabel="Acre" itemValue="AC" />
+                    <f:selectItem itemLabel="Alagoas" itemValue="AL" />
+                    <f:selectItem itemLabel="Amapá" itemValue="AP" />
+                    <f:selectItem itemLabel="Amazonas" itemValue="AM" />
+                    <f:selectItem itemLabel="Bahia" itemValue="BA" />
+                    <f:selectItem itemLabel="Ceara" itemValue="CE" />
+                    <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
+                    <f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
+                    <f:selectItem itemLabel="Goiás" itemValue="GO" />
+                    <f:selectItem itemLabel="Maranhão" itemValue="MA" />
+                    <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
+                    <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="CE" />
+                    <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
+                    <f:selectItem itemLabel="Pará" itemValue="PA" />
+                    <f:selectItem itemLabel="Paraíba" itemValue="PB" />
+                    <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                    <f:selectItem itemLabel="Pernambuco" itemValue="PE" />
+                    <f:selectItem itemLabel="Piauí" itemValue="PI" />
+                    <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
+                    <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
+                    <f:selectItem itemLabel="Rio Grande do  Sul" itemValue="RS" />
+                    <f:selectItem itemLabel="Rondônia" itemValue="RO" />
+                    <f:selectItem itemLabel="Roraima" itemValue="RR" />
+                    <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                    <f:selectItem itemLabel="São Paulo" itemValue="SP" />
+                    <f:selectItem itemLabel="Sergipe" itemValue="SE" />
+                    <f:selectItem itemLabel="Tocations" itemValue="TO"/>
+                </p:selectOneMenu>
+                <p:outputLabel value="Cidade"/>
+                <p:inputText value="#{instituicaoMB.instituicao.endereco.cidade}"/>
+                <p:outputLabel value="Bairro"/>
+                <p:inputText value="#{instituicaoMB.instituicao.endereco.bairro}"/>
+                <p:outputLabel value="Logradouro"/>
+                <p:inputText value="#{instituicaoMB.instituicao.endereco.logradouro}"/>
+
+                <p:outputLabel value="CEP"/>
+                <p:inputMask mask="99999-999" value="#{instituicaoMB.instituicao.endereco.cep}"/>
+                <p:outputLabel value="Número"/>
+                <p:inputText value="#{instituicaoMB.instituicao.endereco.numero}"/>
+                <p:outputLabel value="Complemento"/>
+                <p:inputText value="#{instituicaoMB.instituicao.endereco.complemento}"/>
+            </p:panelGrid>
+            <p:commandButton value="Finalizar cadastro" action="#{instituicaoMB.salvar()}"
+                             update="@all"/>
+
+        </h:form>
+    </h:body>
+
+</html>
+

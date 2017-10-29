@@ -50,5 +50,7 @@ Contributor(s):
     <mapping class="puc.si.psi.ti.modelo.Teste"/>
     <mapping class="puc.si.psi.ti.modelo.Doador"/>
     <mapping class="puc.si.psi.ti.modelo.Endereco"/>
+    <mapping class="puc.si.psi.ti.modelo.Doacao"/>
+    <mapping class="puc.si.psi.ti.modelo.Instituicao"/>
   </session-factory>
 </hibernate-configuration>

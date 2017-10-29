@@ -5,10 +5,11 @@
  */
 package puc.si.psi.ti.bean;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import puc.si.psi.ti.modelo.Doador;
 import puc.si.psi.ti.modelo.Instituicao;
 import puc.si.psi.ti.util.HibernateUtil;
 
@@ -20,6 +21,7 @@ import puc.si.psi.ti.util.HibernateUtil;
 public class InstituicaoMB {
 
     private Instituicao instituicao = new Instituicao();
+    private List<Instituicao> listaInstituicoes = new ArrayList();
 
     public Instituicao getInstituicao() {
         return instituicao;
@@ -29,6 +31,14 @@ public class InstituicaoMB {
         this.instituicao = instituicao;
     }
 
+    public List<Instituicao> getListaInstituicoes() {
+        return listaInstituicoes;
+    }
+
+    public void setListaInstituicoes(List<Instituicao> listaInstituicoes) {
+        this.listaInstituicoes = listaInstituicoes;
+    }
+
     public void salvar() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -36,12 +46,18 @@ public class InstituicaoMB {
             transa.begin();
             session.save(instituicao);
             transa.commit();
+
         } catch (Exception e) {
             System.out.println(e.toString());
         } finally {
+            
             session.close();
             this.instituicao = new Instituicao();
         }
     }
 
+    public void listar() {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        this.listaInstituicoes = session.createCriteria(Instituicao.class).list();
+    }
 }

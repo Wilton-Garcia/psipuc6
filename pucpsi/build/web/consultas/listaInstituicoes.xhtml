@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Instituições Cadastradas</title>
+    </h:head>
+    <h:body >
+        <p:outputLabel value="Lista de instituicõe atualmente cadastradas no Sistema de Doações "/>
+        <h:form>
+            <p:commandButton value="Atualizar"
+                             action="#{instituicaoMB.listar()}"
+                             rendered="true"
+                             update="@all"/>
+            <p:dataTable emptyMessage="Ainda não há nenhuma instituição cadastrada em nosso sistema"
+                         value="#{instituicaoMB.listaInstituicoes}"
+                         var="ins">
+                <p:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{ins.email}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">CNPJ</f:facet>
+                        #{ins.cnpj}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nome</f:facet>
+                        #{ins.nomeInstituicao}
+                </p:column>
+                 <p:column>
+                    <f:facet name="header">Cidade</f:facet>
+                        #{ins.endereco.cidade}
+                </p:column>
+                
+            </p:dataTable>
+        </h:form>
+    </h:body>
+
+</html>
+

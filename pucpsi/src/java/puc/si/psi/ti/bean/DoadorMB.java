@@ -44,20 +44,5 @@ public class DoadorMB {
         }
     }
 
-    public void consultar() {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            Transaction transa = session.getTransaction();
-            transa.begin();
-            this.doador = (Doador) session.get(Doador.class, doador.getId());
-            
-            transa.commit();
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        } finally {
-            session.close();
-            this.doador = new Doador();
-        }
-    }
 
 }

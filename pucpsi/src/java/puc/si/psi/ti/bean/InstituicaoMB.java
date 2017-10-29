@@ -50,7 +50,7 @@ public class InstituicaoMB {
         } catch (Exception e) {
             System.out.println(e.toString());
         } finally {
-            
+
             session.close();
             this.instituicao = new Instituicao();
         }
@@ -60,4 +60,13 @@ public class InstituicaoMB {
         Session session = HibernateUtil.getSessionFactory().openSession();
         this.listaInstituicoes = session.createCriteria(Instituicao.class).list();
     }
+
+    public void consultar(Instituicao i) {
+       instituicao = i;
+    }
+
+    public InstituicaoMB() {
+        listar();
+    }
+
 }

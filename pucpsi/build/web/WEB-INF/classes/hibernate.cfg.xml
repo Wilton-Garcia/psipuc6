@@ -48,5 +48,7 @@ Contributor(s):
     <property name="show_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
     <mapping class="puc.si.psi.ti.modelo.Teste"/>
+    <mapping class="puc.si.psi.ti.modelo.Doador"/>
+    <mapping class="puc.si.psi.ti.modelo.Endereco"/>
   </session-factory>
 </hibernate-configuration>

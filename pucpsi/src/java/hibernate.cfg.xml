@@ -52,5 +52,6 @@ Contributor(s):
     <mapping class="puc.si.psi.ti.modelo.Endereco"/>
     <mapping class="puc.si.psi.ti.modelo.Doacao"/>
     <mapping class="puc.si.psi.ti.modelo.Instituicao"/>
+    <mapping class="puc.si.psi.ti.modelo.Mensagem"/>
   </session-factory>
 </hibernate-configuration>

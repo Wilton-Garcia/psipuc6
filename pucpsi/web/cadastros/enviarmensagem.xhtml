@@ -14,75 +14,20 @@
         <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
         <br/>
         <p:outputLabel value="Nome:    "/>
-        
         <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
         <br/>
         <hr/>
-        <p:outputLabel value="Faça uma doacação com poucos cliques munde o mundo"/>
+        
+        <p:outputLabel value="Faça contato com uma ong"/>
         <h:form>
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Item a ser doadao"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.item}"/>
-                   
-                <p:outputLabel value="Até quando a doação vai estar disponível?"/>
-                <p:calendar size="50" value="#{doacaoMB.doacao.dataValidade}"/>
-                
-                <p:outputLabel value="Estado"/>
-                <p:selectOneMenu value="#{doacaoMB.doacao.endereco.estado}">
-                    <f:selectItem itemLabel="Acre" itemValue="AC" />
-                    <f:selectItem itemLabel="Alagoas" itemValue="AL" />
-                    <f:selectItem itemLabel="Amapá" itemValue="AP" />
-                    <f:selectItem itemLabel="Amazonas" itemValue="AM" />
-                    <f:selectItem itemLabel="Bahia" itemValue="BA" />
-                    <f:selectItem itemLabel="Ceara" itemValue="CE" />
-                    <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
-                    <f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
-                    <f:selectItem itemLabel="Goiás" itemValue="GO" />
-                    <f:selectItem itemLabel="Maranhão" itemValue="MA" />
-                    <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
-                    <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="CE" />
-                    <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
-                    <f:selectItem itemLabel="Pará" itemValue="PA" />
-                    <f:selectItem itemLabel="Paraíba" itemValue="PB" />
-                    <f:selectItem itemLabel="Paraná" itemValue="PR" />
-                    <f:selectItem itemLabel="Pernambuco" itemValue="PE" />
-                    <f:selectItem itemLabel="Piauí" itemValue="PI" />
-                    <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
-                    <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
-                    <f:selectItem itemLabel="Rio Grande do  Sul" itemValue="RS" />
-                    <f:selectItem itemLabel="Rondônia" itemValue="RO" />
-                    <f:selectItem itemLabel="Roraima" itemValue="RR" />
-                    <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
-                    <f:selectItem itemLabel="São Paulo" itemValue="SP" />
-                    <f:selectItem itemLabel="Sergipe" itemValue="SE" />
-                    <f:selectItem itemLabel="Tocations" itemValue="TO"/>
-                </p:selectOneMenu>
-             
-                <p:outputLabel value="Cidade"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.cidade}"/>
-
-                <p:outputLabel value="Bairro"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.bairro}"/>
-
-                <p:outputLabel value="Logradouro"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.logradouro}"/>
-
-                <p:outputLabel value="CEP"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.cep}"/>
-
-                <p:outputLabel value="Número"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.numero}"/>
-
-                <p:outputLabel value="Complemento"/>
-                <p:inputText size="50" value="#{doacaoMB.doacao.endereco.complemento}"/>
-
-                <p:outputLabel value="Nos conte um pouco mais sobre esta doação"/>
-                <p:inputTextarea rows="7"
-                                 value="#{doacaoMB.doacao.descricao}"
-                                 style="width:350px"/><br/>
-                <p:commandButton value="Cadastar" action="#{doacaoMB.salvarDoacao()}"
-                                 />
-            </p:panelGrid>
+            <p:outputLabel value="Email de destino"/>
+            <p:inputText value="#{mensagemMB.mensagem.destinatario}" />
+            
+            <p:outputLabel value="Assunto:"/>
+            <p:inputText value="#{mensagemMB.mensagem.assunto}"/>
+            <p:outputLabel value="Texto"/>
+            <p:inputTextarea value="#{mensagemMB.mensagem.texto}"/>
+            <p:commandButton value="Enviar mensagem" action="#{mensagemMB.enviarMensagem()}"/>
         </h:form>
     </h:body>
 

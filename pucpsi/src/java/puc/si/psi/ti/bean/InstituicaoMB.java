@@ -8,8 +8,12 @@ package puc.si.psi.ti.bean;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
 import puc.si.psi.ti.modelo.Instituicao;
 import puc.si.psi.ti.util.HibernateUtil;
 
@@ -18,9 +22,11 @@ import puc.si.psi.ti.util.HibernateUtil;
  * @author Wilton Garcia
  */
 @ManagedBean
+
 public class InstituicaoMB {
 
     private Instituicao instituicao = new Instituicao();
+    private Instituicao instituicaoLogada = new Instituicao();
     private List<Instituicao> listaInstituicoes = new ArrayList();
 
     public Instituicao getInstituicao() {
@@ -31,6 +37,16 @@ public class InstituicaoMB {
         this.instituicao = instituicao;
     }
 
+    public Instituicao getInstituicaoLogada() {
+        return instituicaoLogada;
+    }
+
+    public void setInstituicaoLogada(Instituicao instituicaoLogada) {
+        this.instituicaoLogada = instituicaoLogada;
+    }
+
+    
+    
     public List<Instituicao> getListaInstituicoes() {
         return listaInstituicoes;
     }
@@ -56,6 +72,9 @@ public class InstituicaoMB {
         }
     }
 
+    
+    
+    
     public void listar() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         this.listaInstituicoes = session.createCriteria(Instituicao.class).list();

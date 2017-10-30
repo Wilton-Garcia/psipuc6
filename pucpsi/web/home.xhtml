@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Index</title>
+    </h:head>
+    <h:body>
+        <p:outputLabel value="Bem vindo a sistema de doacões, ajuda alguém com poucos cliques"/>
+        
+        <hr/>
+        <p:outputLabel value="Email:   "/>
+        <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
+        <br/>
+        <p:outputLabel value="Nome:    "/>
+        <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
+        <hr/>
+        
+        <div id="menu" style="border:solid">
+            <p:link  href="cadastros/cadastrodoacao.xhtml" value=" Fazer uma nova doação "/> <br/>
+            <p:link  href="consultas/listainstituicoes.xhtml" value=" Consultar lista de instituições "/> <br/>
+            <p:link value=" Ver meu historico de doacoes "/> 
+        </div>    
+
+    </h:body>
+
+</html>
+

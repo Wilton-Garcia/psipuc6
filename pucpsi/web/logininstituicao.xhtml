@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Test Index</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:outputLabel value="Email"/>
+            <p:outputLabel value="#{instituicaoSessionMB.instituicaoLogada.email}"/><br/>
+            <p:outputLabel value="Nome da Instituicao"/><br/>
+            <p:outputLabel value="#{instituicaoSessionMB.instituicaoLogada.nomeInstituicao}"/><br/>
+            <p:outputLabel value="Lista de instituicõe atualmente cadastradas no Sistema de Doações "/>
+            <p:panelGrid columns="8">
+                <p:outputLabel  value="Email"/>
+                <p:inputText value="#{instituicaoSessionMB.instituicaoLogada.email}"/>
+
+                <p:outputLabel  value="Senha"/>
+                <p:inputText value="#{instituicaoSessionMB.instituicaoLogada.senha}"/>
+
+
+                <p:commandButton value="Fazer Login" action="#{instituicaoSessionMB.login()}"
+                                 update="@all"/>
+            </p:panelGrid>
+            <p:link href="cadastros/cadastrodoacao.xhtml"
+                    value="Ainda não tem conta? Clique aqui!"/>
+
+
+        </h:form>
+    </h:body>
+
+</html>
+

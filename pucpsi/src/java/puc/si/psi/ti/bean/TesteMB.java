@@ -6,17 +6,17 @@
 package puc.si.psi.ti.bean;
 
 import javax.faces.bean.ManagedBean;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
+import javax.faces.bean.SessionScoped;
+import puc.si.psi.ti.dao.Dao;
 import puc.si.psi.ti.modelo.Teste;
-import puc.si.psi.ti.util.HibernateUtil;
 
 /**
  *
  * @author Wilton Garcia
  */
 @ManagedBean
-public class TesteMB {
+@SessionScoped
+public class TesteMB extends Dao<Teste>{
 
     private Teste teste = new Teste();
 
@@ -32,20 +32,14 @@ public class TesteMB {
         System.out.println(teste.getTeste());
     }
 
-    public void salvar() {
+    public void salvarTeste(){
+        salvar();
+    };
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            Transaction transa = session.getTransaction();
-            transa.begin();
-            session.save(teste);
-            transa.commit();
-        } catch (Exception e) {
-            System.out.println(e.toString());
-        } finally {
-            session.close();
-            this.teste = new Teste();
-        }
+    public TesteMB() {
+        super.obj = teste;
     }
+    
+    
 
 }

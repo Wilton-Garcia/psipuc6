@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package puc.si.psi.ti.modelo;
 
 import java.io.Serializable;
@@ -13,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -34,17 +30,23 @@ public class Doador implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     private String email;
     private String senha;
     private String nomeCompleto;
     private String cpf;
+    
     @Temporal(TemporalType.DATE)
     private Date datanascimento;
+    
     @OneToOne
     @Cascade(CascadeType.ALL)
     private Endereco endereco;
+    
     @OneToMany
-    private List<Doador> historicoDoador = new ArrayList();
+    @JoinTable(name = "tb_historico_doadores", joinColumns = @JoinColumn(name = "id_doador"))
+    private List<Doacao> historicoDoador = new ArrayList();
+ 
     public Long getId() {
         return id;
     }
@@ -91,6 +93,14 @@ public class Doador implements Serializable {
 
     public void setDatanascimento(Date datanascimento) {
         this.datanascimento = datanascimento;
+    }
+
+    public List<Doacao> getHistoricoDoador() {
+        return historicoDoador;
+    }
+
+    public void setHistoricoDoador(List<Doacao> historicoDoador) {
+        this.historicoDoador = historicoDoador;
     }
 
     

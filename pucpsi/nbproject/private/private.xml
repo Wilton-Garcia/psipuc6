@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/index.xhtml</file>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/WEB-INF/jboss-web.xml</file>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/TesteMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/cadastros/cadastrodoacao.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/dao/Dao.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/DoacaoMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Doacao.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Doador.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/DoadorMB.java</file>
         </group>
     </open-files>
 </project-private>

@@ -9,8 +9,16 @@
         <title>Instituições Cadastradas</title>
     </h:head>
     <h:body >
+        
+        <p:outputLabel value="Email:   "/>
+        <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
+        <br/>
+        <p:outputLabel value="Nome:    "/>
+        
+        <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
+        <br/>
+        <hr/>
 
-        <p:outputLabel value="Lista de instituicõe atualmente cadastradas no Sistema de Doações "/>
         <h:form>
 
             <p:dataTable emptyMessage="Ainda não há nenhuma instituição cadastrada em nosso sistema"

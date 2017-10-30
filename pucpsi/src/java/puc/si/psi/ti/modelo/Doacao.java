@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package puc.si.psi.ti.modelo;
 
 import java.io.Serializable;
@@ -12,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import org.hibernate.annotations.Cascade;
@@ -22,6 +18,7 @@ import org.hibernate.annotations.CascadeType;
  * @author Wilton Garcia
  */
 @Entity
+@Table(name = "TB_DOACAO")
 public class Doacao implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -30,13 +27,19 @@ public class Doacao implements Serializable {
     private Long id;
 
     private String Item;
+    
     @OneToOne
     @Cascade(CascadeType.ALL)
     private Endereco endereco;
+    
     @Temporal(TemporalType.DATE)
     private Date dataValidade;
+    
     private String descricao;
-        
+    
+    private Long idDoador;
+    private Long idInstituicao;
+    
     public Long getId() {
         return id;
     }
@@ -77,6 +80,22 @@ public class Doacao implements Serializable {
         this.descricao = descricao;
     }
 
+    public Long getIdDoador() {
+        return idDoador;
+    }
+
+    public void setIdDoador(Long idDoador) {
+        this.idDoador = idDoador;
+    }
+
+    public Long getIdInstituicao() {
+        return idInstituicao;
+    }
+
+    public void setIdInstituicao(Long idInstituicao) {
+        this.idInstituicao = idInstituicao;
+    }
+
     
     
     @Override
@@ -103,5 +122,10 @@ public class Doacao implements Serializable {
     public String toString() {
         return "puc.si.psi.ti.modelo.Doacao[ id=" + id + " ]";
     }
+
+    public Doacao() {
+        this.endereco = new Endereco();
+    }
+    
     
 }

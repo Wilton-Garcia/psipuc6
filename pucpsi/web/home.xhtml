@@ -7,25 +7,49 @@
 
     <h:head>
         <title>Sistema de Doaçãoes</title>
+      
+        <link href="layout/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </h:head>
     <h:body>
-        <p:outputLabel value="Bem vindo a sistema de doacões, ajuda alguém com poucos cliques"/>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../home.xhtml">Sistema de Doações</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="home.xhtml">Página Inicial</a></li>
+                        <li><a href="consultas/meuhistorico.xhtml">Meu histórico de doações</a></li>
+                        <li><a href="consultas/listainstituicoes.xhtml">Lista de Instituioções</a></li>
+                        <li><a href="consultas/minhasmensagens.xhtml">Caixa de Mensagens</a></li>
+                        <li><a href="cadastros/enviarmensagem.xhtml">Nova mensagens</a></li>
+                        <li><a href="cadastros/cadastrodoacao.xhtml">Fazer uma nova doação</a></li>
+                        
+                    </ul>
+                   
+                    <ul class="nav navbar-nav navbar-right">
+                   
+
+                        <li><p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
         
-        <hr/>
-        <p:outputLabel value="Email:   "/>
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
-        <br/>
-        <p:outputLabel value="Nome:    "/>
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
-        <hr/>
         
-        <div id="menu" style="border:solid">
-            <p:link  href="cadastros/cadastrodoacao.xhtml" value=" Fazer uma nova doação "/> <br/><br/>
-            <p:link  href="consultas/listainstituicoes.xhtml" value=" Consultar lista de instituições "/> <br/><br/>
-            <p:link value="Ver meu historico de doacoes "/> <br/><br/>
-            <p:link href="consultas/minhasmensagens.xhtml" value=" Minhas mensagens"/> <br/><br/>
-            <p:link href="cadastros/enviarmensagem.xhtml" value=" Nova mensagem"/> <br/><br/>
-        </div>    
 
     </h:body>
 

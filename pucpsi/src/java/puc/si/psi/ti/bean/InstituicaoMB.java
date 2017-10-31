@@ -8,12 +8,8 @@ package puc.si.psi.ti.bean;
 import java.util.ArrayList;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.criterion.Criterion;
-import org.hibernate.criterion.Restrictions;
 import puc.si.psi.ti.modelo.Instituicao;
 import puc.si.psi.ti.util.HibernateUtil;
 

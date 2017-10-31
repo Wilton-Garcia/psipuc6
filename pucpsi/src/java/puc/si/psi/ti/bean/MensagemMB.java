@@ -48,7 +48,7 @@ public class MensagemMB extends DaoMensagem<Mensagem> {
             salvar();
         }
     }
-
+    
     public void atualizarCaixaDeEntrada(){
         System.out.println(getSessaoDoadorLogado().getEmail());
         caixaDeEntrada = carregarCaixaDeEntrada(getSessaoDoadorLogado().getEmail());
@@ -67,5 +67,8 @@ public class MensagemMB extends DaoMensagem<Mensagem> {
         this.caixaDeEntrada = caixaDeEntrada;
     }
     
+     public void consultar(Mensagem i) {
+       mensagem = i;
+    }
     
 }

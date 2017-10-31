@@ -6,28 +6,69 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Cadastrar Doação</title>
+        <title>Enviar Mensagem</title>
+        
+        <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </h:head>
 
     <h:body>
-        <p:outputLabel value="Email:   "/>
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
-        <br/>
-        <p:outputLabel value="Nome:    "/>
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../home.xhtml">Sistema de Doações</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="../home.xhtml">Página Inicial</a></li>
+                        <li><a href="../consultas/meuhistorico.xhtml">Meu histórico de doações</a></li>
+                        <li><a href="../consultas/listainstituicoes.xhtml">Lista de Instituioções</a></li>
+                        <li><a href="../consultas/minhasmensagens.xhtml">Caixa de Mensagens</a></li>
+                        <li><a href="../cadastros/enviarmensagem.xhtml">Nova mensagens</a></li>
+                        <li><a href="../cadastros/cadastrodoacao.xhtml">Fazer uma nova doação</a></li>
+                        
+                    </ul>
+                   
+                    <ul class="nav navbar-nav navbar-right">
+                   
+
+                        <li><p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/></li>
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+
         <br/>
         <hr/>
-        
+
         <p:outputLabel value="Faça contato com uma ong"/>
         <h:form>
-            <p:outputLabel value="Email de destino"/>
-            <p:inputText value="#{mensagemMB.mensagem.destinatario}" />
-            
-            <p:outputLabel value="Assunto:"/>
-            <p:inputText value="#{mensagemMB.mensagem.assunto}"/>
-            <p:outputLabel value="Texto"/>
-            <p:inputTextarea value="#{mensagemMB.mensagem.texto}"/>
-            <p:commandButton value="Enviar mensagem" action="#{mensagemMB.enviarMensagem()}"/>
+                <div class="form-control">
+                    <p:outputLabel value="Email de destino"/><br/>
+                    <p:inputText size="50"
+                                 value="#{mensagemMB.mensagem.destinatario}" /><br/>
+                    <p:outputLabel value="Assunto:"/><br/>
+                    <p:inputText size="50"
+                                 value="#{mensagemMB.mensagem.assunto}"/><br/>
+                    <p:outputLabel value="Texto"/><br/>
+                    <p:inputTextarea style="width:420px"
+                                     rows="10"
+                                     value="#{mensagemMB.mensagem.texto}"/>
+                    <p:commandButton value="Enviar mensagem" action="#{mensagemMB.enviarMensagem()}"/>
+
+                </div>
         </h:form>
     </h:body>
 

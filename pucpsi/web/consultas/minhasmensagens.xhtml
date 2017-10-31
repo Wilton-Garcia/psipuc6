@@ -6,24 +6,54 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Instituições Cadastradas</title>
+
+        <title>Sistema de Doações</title>
+        <!--    <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>-->
     </h:head>
     <h:body >
+        <!--
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../home.xhtml">Sistema de Doações</a>
+                </div>
 
-        <p:outputLabel value="Email:   "/>
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.email}" />
-        <br/>
-        <p:outputLabel value="Nome:    "/>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                        <li><a href="../home.xhtml">Página Inicial</a></li>
+                        <li><a href="../consultas/meuhistorico.xhtml">Meu histórico de doações</a></li>
+                        <li><a href="../consultas/listainstituicoes.xhtml">Lista de Instituioções</a></li>
+                        <li><a href="../consultas/minhasmensagens.xhtml">Caixa de Mensagens</a></li>
+                        <li><a href="../cadastros/enviarmensagem.xhtml">Nova mensagens</a></li>
+                        <li><a href="../cadastros/cadastrodoacao.xhtml">Fazer uma nova doação</a></li>
 
-        <p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/>
-        <br/>
-        <hr/>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li><p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/></li>
+
+                    </ul>
+                </div>
+            </div>
+        
+        </nav>-->
 
         <h:form>
             <p:commandButton value="Atualizar"
                              action="#{mensagemMB.atualizarCaixaDeEntrada()}"
-                             update="@all"/>
-            
+                             update="@form"/>
+
             <p:dataTable emptyMessage="Ainda não há nenhuma mensagem recebida"
                          value="#{mensagemMB.caixaDeEntrada}"
                          var="msg">
@@ -41,22 +71,23 @@
                 </p:column>
                 <p:column>
                     <p:commandLink value="Consultar"
-                                   action="#{instituicaoMB.consultar(ins)}"
+                                   action="#{mensagemMB.consultar(msg)}"
                                    update=":dialog"     
-                                   oncomplete="PF('Mensagem').show();"
+                                   oncomplete="PF('mensagemCompleta').show();"
                                    />
                 </p:column>
 
             </p:dataTable>
 
         </h:form>
-        <p:dialog header="Mensagem"
+        <p:dialog header="Instituição"
                   modal="true"
                   id="dialog"
 
-                  widgetVar="mensagem">
-            <p:inputTextarea value="#{msg.texto}"
-                             disabled="true"/>
+                  widgetVar="mensagemCompleta">
+            <div>
+                <p:outputLabel value="#{mensagemMB.mensagem.texto}"/>
+            </div>
         </p:dialog>
     </h:body>
 

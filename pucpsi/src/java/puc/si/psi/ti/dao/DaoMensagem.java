@@ -60,4 +60,6 @@ public abstract class DaoMensagem<T> {
                 .add(Restrictions.eq("destinatario", email))
                 .list();
     }
+    
+    
 }

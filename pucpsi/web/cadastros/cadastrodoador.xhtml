@@ -6,67 +6,111 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <title>Test Index</title>
+        <title>Cadastrar Doador</title>
+        <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
     </h:head>
     <h:body>
-        <p:outputLabel value="Para se tornar um doador é bem simples, basta preenhcer alguns dados a baixo"/>
+
+
+        <!--        BootStrap
+            <nav class="navbar navbar-default">-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+
+                    <a class="navbar-brand" href="#">Sistema de Doações</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="../logininstituicao.xhtml">Login (Instituições)
+                            </a></li>
+                        <li><a href="../logindoador.xhtml">Login (Doadores)</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="text-info">
+            <p:outputLabel value="Para fazer parte do nosso sitema é bem simples, basta preenhcer alguns dados a baixo"
+                           style="font-size:20px;margin-left:50px;margin-top: 25px;"/>
+        </div>
         <h:form>
-            <p:panelGrid columns="2">
-                <p:outputLabel value="Email"/>
-                <p:inputText value="#{doadorMB.doador.email}"/>
-                <p:outputLabel value="Senha"/>
-                <p:password value="#{doadorMB.doador.senha}"/>
-                <p:outputLabel value="Nome completo"/>
-                <p:inputText value="#{doadorMB.doador.nomeCompleto}"/>
-                <p:outputLabel value="Data de Nascimento"/>
-                <p:calendar value="#{doadorMB.doador.datanascimento}"/>
-                <p:outputLabel value="CPF"/>
-                <p:inputMask mask="999.999.999-99" value="#{doadorMB.doador.cpf}"/>
-                <p:outputLabel value="Estado"/>
-                <p:selectOneMenu value="#{doadorMB.doador.endereco.estado}">
-                    <f:selectItem itemLabel="Acre" itemValue="AC" />
-                    <f:selectItem itemLabel="Alagoas" itemValue="AL" />
-                    <f:selectItem itemLabel="Amapá" itemValue="AP" />
-                    <f:selectItem itemLabel="Amazonas" itemValue="AM" />
-                    <f:selectItem itemLabel="Bahia" itemValue="BA" />
-                    <f:selectItem itemLabel="Ceara" itemValue="CE" />
-                    <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
-                    <f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
-                    <f:selectItem itemLabel="Goiás" itemValue="GO" />
-                    <f:selectItem itemLabel="Maranhão" itemValue="MA" />
-                    <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
-                    <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="CE" />
-                    <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
-                    <f:selectItem itemLabel="Pará" itemValue="PA" />
-                    <f:selectItem itemLabel="Paraíba" itemValue="PB" />
-                    <f:selectItem itemLabel="Paraná" itemValue="PR" />
-                    <f:selectItem itemLabel="Pernambuco" itemValue="PE" />
-                    <f:selectItem itemLabel="Piauí" itemValue="PI" />
-                    <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
-                    <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
-                    <f:selectItem itemLabel="Rio Grande do  Sul" itemValue="RS" />
-                    <f:selectItem itemLabel="Rondônia" itemValue="RO" />
-                    <f:selectItem itemLabel="Roraima" itemValue="RR" />
-                    <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
-                    <f:selectItem itemLabel="São Paulo" itemValue="SP" />
-                    <f:selectItem itemLabel="Sergipe" itemValue="SE" />
-                    <f:selectItem itemLabel="Tocations" itemValue="TO"/>
-                </p:selectOneMenu>
-                <p:outputLabel value="Cidade"/>
-                <p:inputText value="#{doadorMB.doador.endereco.cidade}"/>
-                <p:outputLabel value="Bairro"/>
-                <p:inputText value="#{doadorMB.doador.endereco.bairro}"/>
-                <p:outputLabel value="Logradouro"/>
-                <p:inputText value="#{doadorMB.doador.endereco.logradouro}"/>
-                
-                <p:outputLabel value="CEP"/>
-                <p:inputMask mask="99999-999" value="#{doadorMB.doador.endereco.cep}"/>
-                <p:outputLabel value="Número"/>
-                <p:inputText value="#{doadorMB.doador.endereco.numero}"/>
-                <p:outputLabel value="Complemento"/>
-                <p:inputText value="#{doadorMB.doador.endereco.complemento}"/>
-            </p:panelGrid>
-            <p:commandButton value="Finalizar cadastro" action="#{doadorMB.salvar()}"/>
+            <div class="jumbotron">
+                <div style="margin-left:420px">
+                    <p:outputLabel value="Email"/><br/>
+                    <p:inputText value="#{doadorMB.doador.email}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Senha"/><br/>
+                    <p:password value="#{doadorMB.doador.senha}"
+                                size="50"/><br/>
+                    <p:outputLabel value="Nome completo"/><br/>
+                    <p:inputText value="#{doadorMB.doador.nomeCompleto}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Data de Nascimento"/><br/>
+                    <p:calendar value="#{doadorMB.doador.datanascimento}"
+                                size="50"/><br/>
+                    <p:outputLabel value="CPF"/><br/>
+                    <p:inputMask mask="999.999.999-99" value="#{doadorMB.doador.cpf}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Estado"/><br/>
+                    <p:selectOneMenu     style="width:380px"
+                                         value="#{doadorMB.doador.endereco.estado}">
+                        <f:selectItem itemLabel="Acre" itemValue="AC" />
+                        <f:selectItem itemLabel="Alagoas" itemValue="AL" />
+                        <f:selectItem itemLabel="Amapá" itemValue="AP" />
+                        <f:selectItem itemLabel="Amazonas" itemValue="AM" />
+                        <f:selectItem itemLabel="Bahia" itemValue="BA" />
+                        <f:selectItem itemLabel="Ceara" itemValue="CE" />
+                        <f:selectItem itemLabel="Distrito Federal" itemValue="DF" />
+                        <f:selectItem itemLabel="Espírito Santo" itemValue="ES" />
+                        <f:selectItem itemLabel="Goiás" itemValue="GO" />
+                        <f:selectItem itemLabel="Maranhão" itemValue="MA" />
+                        <f:selectItem itemLabel="Mato Grosso" itemValue="MT" />
+                        <f:selectItem itemLabel="Mato Grosso do Sul" itemValue="CE" />
+                        <f:selectItem itemLabel="Minas Gerais" itemValue="MG" />
+                        <f:selectItem itemLabel="Pará" itemValue="PA" />
+                        <f:selectItem itemLabel="Paraíba" itemValue="PB" />
+                        <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                        <f:selectItem itemLabel="Pernambuco" itemValue="PE" />
+                        <f:selectItem itemLabel="Piauí" itemValue="PI" />
+                        <f:selectItem itemLabel="Rio de Janeiro" itemValue="RJ" />
+                        <f:selectItem itemLabel="Rio Grande do Norte" itemValue="RN" />
+                        <f:selectItem itemLabel="Rio Grande do  Sul" itemValue="RS" />
+                        <f:selectItem itemLabel="Rondônia" itemValue="RO" />
+                        <f:selectItem itemLabel="Roraima" itemValue="RR" />
+                        <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                        <f:selectItem itemLabel="São Paulo" itemValue="SP" />
+                        <f:selectItem itemLabel="Sergipe" itemValue="SE" />
+                        <f:selectItem itemLabel="Tocations" itemValue="TO"/>
+                    </p:selectOneMenu><br/>
+                    <p:outputLabel value="Cidade"/><br/>
+                    <p:inputText value="#{doadorMB.doador.endereco.cidade}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Bairro"/><br/>
+                    <p:inputText value="#{doadorMB.doador.endereco.bairro}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Logradouro"/><br/>
+                    <p:inputText value="#{doadorMB.doador.endereco.logradouro}"
+                                 size="50"/><br/>
+
+                    <p:outputLabel value="CEP"/><br/>
+                    <p:inputMask mask="99999-999" value="#{doadorMB.doador.endereco.cep}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Número"/><br/>
+                    <p:inputText value="#{doadorMB.doador.endereco.numero}"
+                                 size="50"/><br/>
+                    <p:outputLabel value="Complemento"/><br/>
+                    <p:inputText value="#{doadorMB.doador.endereco.complemento}"
+                                 size="50"/><br/><br/>
+
+                    <p:commandButton value="Finalizar cadastro" 
+                                     action="#{doadorMB.salvar()}"
+                                     style="width:380px"/>
+                </div>
+            </div>
         </h:form>
     </h:body>
 

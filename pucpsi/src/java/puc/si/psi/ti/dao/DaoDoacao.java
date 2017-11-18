@@ -57,7 +57,7 @@ public abstract class DaoDoacao<T> {
     public List<T> carregarMeuHistorico(long id){
         session = HibernateUtil.getSessionFactory().openSession();
         return session.createCriteria(obj.getClass())
-                .add(Restrictions.eq("id", id))
+                .add(Restrictions.eq("idDoador", id))
                 .list();
     }
     

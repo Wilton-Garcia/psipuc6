@@ -1,6 +1,8 @@
 package puc.si.psi.ti.bean;
 
+import java.io.IOException;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
 import puc.si.psi.ti.dao.Dao;
 import puc.si.psi.ti.modelo.Doador;
 
@@ -21,8 +23,11 @@ public class DoadorMB extends Dao <Doador> {
         this.doador = doador;
     }
 
-    public void salvarDoador() {
+    public void salvarDoador() throws IOException {
         salvar();
+        FacesContext.getCurrentInstance()
+                        .getExternalContext()
+                        .redirect("../logindodador.xhtml");
     }
     public void atualizarDoador(){
         atualizar();

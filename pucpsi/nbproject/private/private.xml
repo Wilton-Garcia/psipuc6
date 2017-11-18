@@ -3,10 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/consultas/consultadoador.xhtml</file>
             <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/index.xhtml</file>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/logindoador.xhtml</file>
-            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/logininstituicao.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/consultas/minhasmensagens.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/dao/DaoDoacao.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/cadastros/cadastrodoador.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/DoadorSessionMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/DoacaoMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Solicitacao.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Doacao.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/home.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/base.xhtml</file>
             <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/cadastros/enviarmensagem.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/cadastros/cadastrodoacao.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/InstituicaoSessionMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/logindoador.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/consultas/listainstituicoes.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/SolicitacaoMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/TesteMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/logininstituicao.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/DoadorMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/cadastros/cadastroinstituicao.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/MensagemMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Mensagem.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/bean/InstituicaoMB.java</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/web/consultas/meuhistorico.xhtml</file>
+            <file>file:/C:/Users/Wilton%20Garcia/Desktop/pucpsi/src/java/puc/si/psi/ti/modelo/Doador.java</file>
         </group>
     </open-files>
 </project-private>

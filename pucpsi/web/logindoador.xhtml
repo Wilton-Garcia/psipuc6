@@ -8,34 +8,61 @@
     <h:head>
         <title>Cadastro Doador</title>
         <title>Sistema de Doações</title>
-        <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="layout/css/bootstrap.min.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
     </h:head>
     <h:body>
+        <!--        BootStrap
+                <nav class="navbar navbar-default">-->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
 
-        <h:form>
-            <div>
-                <div class='form-group'>
-                    <p:outputLabel  value="Email"/><br/>
-                    <p:inputText
-                        size="35"
-                        placeholder="Digite o seu email aqui"
-                        value="#{doadorSessionMB.doadorLogado.email}"/><br/>
+                    <a class="navbar-brand" href="#">Sistema de Doações</a>
                 </div>
-                <div class="form-group">
-                    <p:outputLabel  value="Senha"/><br/>
-                    <p:inputText
-                        size="35"
-                        value="#{doadorSessionMB.doadorLogado.senha}"/>
-                    <br/>
-                    <p:commandButton value="Fazer Login" action="#{doadorSessionMB.login()}"/>
-                </div>
-                <p:link href="cadastros/cadastrodoador.xhtml"
-                        value="Ainda não tem conta? Clique aqui!"/>
-            </div>
 
-        </h:form>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="logininstituicao.xhtml">Login (Instituições)
+                            </a></li>
+                        <li><a href="logindoador.xhtml">Login (Doadores)</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div 
+            class="jumbotron">
+            <h:form>
+                <div style="margin-left:450px">
+                    <div class='form-group'>
+                        <p:outputLabel  value="Email"/><br/>
+                        <p:inputText
+                            size="50"
+                            placeholder="Digite o seu email aqui"
+                            value="#{doadorSessionMB.doadorLogado.email}"/><br/>
+                    </div>
+                    <div class="form-group">
+                        <p:outputLabel  value="Senha"/><br/>
+                        <p:inputText
+                            size="50"
+                            value="#{doadorSessionMB.doadorLogado.senha}"/>
+                        <br/>
+                        <br/>
+                        <p:commandButton 
+                            
+                            value="Fazer Login" 
+                            action="#{doadorSessionMB.login()}"/>
+                    </div>
+                    <p:link href="cadastros/cadastrodoador.xhtml"
+                            value="Ainda não tem conta? Clique aqui!"/>
+                </div>
+
+            </h:form>
+        </div>
     </h:body>
 
 </html>

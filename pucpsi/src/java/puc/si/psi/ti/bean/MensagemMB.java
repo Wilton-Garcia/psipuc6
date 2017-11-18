@@ -47,6 +47,8 @@ public class MensagemMB extends DaoMensagem<Mensagem> {
         if(mensagem.getDestinatario() != null && mensagem.getRemetente() != null){
             salvar();
         }
+        this.mensagem = new Mensagem();
+        
     }
     
     public void atualizarCaixaDeEntrada(){

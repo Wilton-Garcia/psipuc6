@@ -7,7 +7,7 @@
 
     <h:head>
         <title>Enviar Mensagem</title>
-        
+
         <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -30,18 +30,17 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                         <li><a href="../home.xhtml">Página Inicial</a></li>
                         <li><a href="../consultas/meuhistorico.xhtml">Meu histórico de doações</a></li>
                         <li><a href="../consultas/listainstituicoes.xhtml">Lista de Instituioções</a></li>
                         <li><a href="../consultas/minhasmensagens.xhtml">Caixa de Mensagens</a></li>
                         <li><a href="../cadastros/enviarmensagem.xhtml">Nova mensagens</a></li>
                         <li><a href="../cadastros/cadastrodoacao.xhtml">Fazer uma nova doação</a></li>
-                        
+
                     </ul>
-                   
+
                     <ul class="nav navbar-nav navbar-right">
-                   
+
 
                         <li><p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/></li>
 
@@ -50,12 +49,13 @@
             </div><!-- /.container-fluid -->
         </nav>
 
-        <br/>
-        <hr/>
 
-        <p:outputLabel value="Faça contato com uma ong"/>
+
+
         <h:form>
-                <div class="form-control">
+            <div class="jumbotron">
+                <p:outputLabel value="Faça contato através de mensagens"/>
+                <div style="margin-left:400px">
                     <p:outputLabel value="Email de destino"/><br/>
                     <p:inputText size="50"
                                  value="#{mensagemMB.mensagem.destinatario}" /><br/>
@@ -65,10 +65,12 @@
                     <p:outputLabel value="Texto"/><br/>
                     <p:inputTextarea style="width:420px"
                                      rows="10"
-                                     value="#{mensagemMB.mensagem.texto}"/>
-                    <p:commandButton value="Enviar mensagem" action="#{mensagemMB.enviarMensagem()}"/>
-
+                                     value="#{mensagemMB.mensagem.texto}"/><br/>
+                    <p:commandButton value="Enviar mensagem"
+                                     action="#{mensagemMB.enviarMensagem()}"
+                                     style="width:420p"/>
                 </div>
+            </div>
         </h:form>
     </h:body>
 

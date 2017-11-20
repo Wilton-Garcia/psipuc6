@@ -5,8 +5,10 @@
  */
 package puc.si.psi.ti.bean;
 
+import java.io.IOException;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -31,25 +33,29 @@ public class InstituicaoSessionMB {
         this.instituicaoLogada = instituicaoLogada;
     }
 
-    public void login() {
+   public void login() throws IOException {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         try {
             Criteria criterio = session.createCriteria(Instituicao.class)
                     .add(Restrictions.eq("email", instituicaoLogada.getEmail()))
                     .add(Restrictions.eq("senha", instituicaoLogada.getSenha()));
-            /*  Criterion email = Restrictions.gt("email", instituicaoLogada.getEmail());
-            Criterion senha = Restrictions.gt("senha", instituicaoLogada.getSenha());
-            criterio.add(email);
-            criterio.add(senha);
-            criterio.setMaxResults(1);*/
+            criterio.setMaxResults(1);
             instituicaoLogada = (Instituicao) criterio.uniqueResult();
             System.out.println(instituicaoLogada.getEmail());
         } catch (Exception e) {
             System.out.println(e);
         } finally {
-
+            if (instituicaoLogada != null) {
+                FacesContext.getCurrentInstance()
+                        .getExternalContext()
+                        .redirect("homei.xhtml");
+            } else {
+                
+            }
         }
+        
+   }
+   
 
-    }
 }

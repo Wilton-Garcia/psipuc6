@@ -40,6 +40,7 @@ public class Doacao implements Serializable {
     private Long idDoador;
     private Long idInstituicao;
     
+    
     public Long getId() {
         return id;
     }

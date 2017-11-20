@@ -71,6 +71,7 @@ public class InstituicaoMB {
     
     
     
+    
     public void listar() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         this.listaInstituicoes = session.createCriteria(Instituicao.class).list();

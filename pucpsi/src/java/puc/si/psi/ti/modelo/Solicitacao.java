@@ -11,9 +11,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 /**
  *
@@ -28,13 +31,15 @@ public class Solicitacao implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private Integer IdInstituicao;
-    private String pedido;
+    private Long IdInstituicao;
+    private String item;
     @Temporal(TemporalType.DATE)
     private Date dataValidadePedido;
     private String descricaoPedido;
-    
-    
+    @OneToOne
+    @Cascade(CascadeType.ALL)
+    private Endereco endereco;
+
     public Long getId() {
         return id;
     }
@@ -43,20 +48,20 @@ public class Solicitacao implements Serializable {
         this.id = id;
     }
 
-    public Integer getIdInstituicao() {
+    public Long getIdInstituicao() {
         return IdInstituicao;
     }
 
-    public void setIdInstituicao(Integer IdInstituicao) {
+    public void setIdInstituicao(Long IdInstituicao) {
         this.IdInstituicao = IdInstituicao;
     }
 
-    public String getPedido() {
-        return pedido;
+    public String getItem() {
+        return item;
     }
 
-    public void setPedido(String pedido) {
-        this.pedido = pedido;
+    public void setItem(String item) {
+        this.item = item;
     }
 
     public Date getDataValidadePedido() {
@@ -73,6 +78,14 @@ public class Solicitacao implements Serializable {
 
     public void setDescricaoPedido(String descricaoPedido) {
         this.descricaoPedido = descricaoPedido;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     
@@ -101,5 +114,8 @@ public class Solicitacao implements Serializable {
     public String toString() {
         return "puc.si.psi.ti.modelo.Solicitacao[ id=" + id + " ]";
     }
-    
+    public Solicitacao(){
+        this.endereco = new Endereco();
+    }
+
 }

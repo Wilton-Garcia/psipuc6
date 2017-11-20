@@ -53,5 +53,6 @@ Contributor(s):
     <mapping class="puc.si.psi.ti.modelo.Doacao"/>
     <mapping class="puc.si.psi.ti.modelo.Instituicao"/>
     <mapping class="puc.si.psi.ti.modelo.Mensagem"/>
+    <mapping class="puc.si.psi.ti.modelo.Solicitacao"/>
   </session-factory>
 </hibernate-configuration>

@@ -61,5 +61,10 @@ public abstract class DaoInstituicao<T> {
                 .list();
     }
     
+    public List<T> listar(){
+        session = HibernateUtil.getSessionFactory().openSession();
+        return session.createCriteria(obj.getClass()).list();
+    }
+    
     
 }

@@ -27,6 +27,7 @@ public class SolicitacaoMB extends DaoInstituicao<Solicitacao> {
     private InstituicaoSessionMB instituicaoSessionMB;
 
     private List<Solicitacao> historicoDePedidos = new ArrayList();
+    private List<Solicitacao> todasSolicitacoes = new ArrayList();
     
     public Instituicao getSessaoInstituicaoLogado() {
         Instituicao i = instituicaoSessionMB.getInstituicaoLogada();
@@ -41,6 +42,15 @@ public class SolicitacaoMB extends DaoInstituicao<Solicitacao> {
         this.historicoDePedidos = historicoDePedidos;
     }
 
+    public List<Solicitacao> getTodasSolicitacoes() {
+        return todasSolicitacoes;
+    }
+
+    public void setTodasSolicitacoes(List<Solicitacao> todasSolicitacoes) {
+        this.todasSolicitacoes = todasSolicitacoes;
+    }
+
+    
     
     
      public InstituicaoSessionMB getInstituicaoSessionMB() {
@@ -68,6 +78,10 @@ public class SolicitacaoMB extends DaoInstituicao<Solicitacao> {
     
     public void carregarHistoricoPedidos(){
         this.historicoDePedidos = carregarMeuHistorico(getSessaoInstituicaoLogado().getId());
+    }
+    
+    public void carregaTodosPedidos(){
+        this.todasSolicitacoes = listar();
     }
 
     public SolicitacaoMB() {

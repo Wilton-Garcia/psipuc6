@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Instituições Cadastradas</title>
+        <link href="../layout/css/bootstrap.min.css" rel="stylesheet"/>
+    </h:head>
+    <h:body >
+
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="../home.xhtml">Sistema de Doações</a>
+                </div>
+
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../home.xhtml">Página Inicial</a></li>
+                        <li><a href="../consultas/meuhistorico.xhtml">Meu histórico de doações</a></li>
+                        <li><a href="../consultas/listainstituicoes.xhtml">Lista de Instituioções</a></li>
+                        <li><a href="../consultas/minhasmensagens.xhtml">Caixa de Mensagens</a></li>
+                        <li><a href="../cadastros/enviarmensagem.xhtml">Nova mensagens</a></li>
+                        <li><a href="../cadastros/cadastrodoacao.xhtml">Fazer uma nova doação</a></li>
+
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li><p:outputLabel value="#{doadorSessionMB.doadorLogado.nomeCompleto}"/></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <h:form>
+
+            <p:dataTable emptyMessage="Ainda não há nenhuma instituição cadastrada em nosso sistema"
+                         value="#{instituicaoMB.listaInstituicoes}"
+                         var="ins">
+                <p:column>
+                    <f:facet name="header">ID</f:facet>
+                        #{ins.id}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Email</f:facet>
+                        #{ins.email}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">CNPJ</f:facet>
+                        #{ins.cnpj}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Nome</f:facet>
+                        #{ins.nomeInstituicao}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Cidade</f:facet>
+                        #{ins.endereco.cidade}
+                </p:column>
+                <p:column>
+                    <p:commandLink value="Consultar"
+                                   action="#{instituicaoMB.consultar(ins)}"
+                                   update=":dialog"     
+                                   oncomplete="PF('consultaDados').show();"
+
+                                   />
+                </p:column>
+
+            </p:dataTable>
+
+        </h:form>
+        <p:dialog header="Instituição"
+                  modal="true"
+                  id="dialog"
+
+                  widgetVar="consultaDados">
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Insituição :"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.nomeInstituicao}"/>
+            </p:panelGrid>
+
+            <p:panelGrid columns="6">
+                <p:outputLabel value="CNPJ :"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.cnpj}"/>
+                <p:outputLabel value="Email :"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.email}"/>
+                <p:outputLabel value="Atuando desde :"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.dataCriacao}"/>
+            </p:panelGrid>
+            <p:panelGrid columns="6">
+                <p:outputLabel value="Estado: "/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.estado}"/>
+                <p:outputLabel value="Cidade: "/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.cidade}"/>
+                <p:outputLabel value="Bairro:"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.bairro}"/>
+            </p:panelGrid>
+            <p:panelGrid columns="6">
+                <p:outputLabel value="Rua: "/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.logradouro}"/>
+                <p:outputLabel value="Número:"/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.numero}"/>
+                <p:outputLabel value="Cidade: "/> 
+                <p:outputLabel value="#{instituicaoMB.instituicao.endereco.cep}"/>
+            </p:panelGrid>
+        </p:dialog>
+    </h:body>
+
+</html>
+
